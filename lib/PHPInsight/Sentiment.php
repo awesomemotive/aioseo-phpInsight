@@ -222,7 +222,7 @@ class Sentiment {
 		$fn = "{$this->dataFolder}data.{$class}.php";
 
 		if (file_exists($fn)) {
-			$temp = file_get_contents($fn);
+			$temp  = trim((string) file_get_contents($fn));
 			$words = unserialize($temp);
 		} else {
 			echo 'File does not exist: ' . $fn;
@@ -343,7 +343,7 @@ class Sentiment {
 		$fn = "{$this->dataFolder}data.{$type}.php";
 		;
 		if (file_exists($fn)) {
-			$temp = file_get_contents($fn);
+			$temp  = trim((string) file_get_contents($fn));
 			$words = unserialize($temp);
 		} else {
 			return 'File does not exist: ' . $fn;
